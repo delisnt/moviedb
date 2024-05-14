@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { options } from '../config';
 
 function useFetch() {
   const [movies, setMovies] = useState([]);
@@ -7,14 +8,6 @@ function useFetch() {
   const [imgConf, setImgConf] = useState([]);
   const [imgConfCarousel, setImgConfCarousel] = useState([]);
   const { movieid } = useParams();
-  const options = {
-    method: "GET",
-    headers: {
-      accept: "application/json",
-      Authorization:
-        "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIwY2Y0OGJiNDkyYTNiZjdlMWMxOGNkOGI1ZmYwMzVjNCIsInN1YiI6IjY2MjAzMmM2NmEzMDBiMDE3ZTMzOWQzMiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.dXO4BXn1yq3Wz8kx2qRF02utcmdcni51g4-NBcpgwow",
-    },
-  };
 
   async function fetchMovieQuery() {
     const res = await fetch(
@@ -72,17 +65,17 @@ function useFetch() {
     }
   }
 
-  // useEffect(() => {
-  //   FetchData();
-  // }, []);
+  useEffect(() => {
+    FetchData();
+  }, []);
 
-  // useEffect(() => {
-  //   fetchConfigurationData();
-  // }, []);
+  useEffect(() => {
+    fetchConfigurationData();
+  }, []);
 
-  // useEffect(() => {
-  //   fetchSingleMovie();
-  // }, []);
+  useEffect(() => {
+    fetchSingleMovie();
+  }, []);
 
   // useEffect(() => {
   //   fetchMovieQuery();
@@ -93,8 +86,6 @@ function useFetch() {
     movies,
     imgConf,
     imgConfCarousel,
-    FetchData,
-    fetchConfigurationData
   };
 }
 

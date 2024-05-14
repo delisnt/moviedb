@@ -7,26 +7,21 @@ import Root from "./pages/Root";
 import HomePage from "./pages/Homepage";
 import NotFound from "./pages/NotFound";
 import MovieRoot from "./pages/MovieRoot";
-import useFetch from "./hooks/useFetch";
+import useFetch from './hooks/useFetch'
 
 function App() {
-  const { fetchConfigurationData, FetchData, fetchSingleMovie } = useFetch();
+  const { fetchConfigurationData, FetchData } = useFetch()
   const router = createBrowserRouter([
     {
       path: "/",
       element: <Root />,
       errorElement: <NotFound />,
       children: [
-        {
-          index: true,
-          element: <HomePage />,
-          loader: { fetchConfigurationData, FetchData },
-        },
+        { index: true, element: <HomePage /> },
         { path: "login", element: <Login /> },
         {
           path: "movies",
           element: <MovieRoot />,
-          
           children: [
             {
               index: true,
@@ -35,7 +30,6 @@ function App() {
             {
               path: ":movieid",
               element: <MoviePage />,
-              loader: fetchSingleMovie,
             },
           ],
         },

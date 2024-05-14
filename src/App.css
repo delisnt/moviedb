@@ -1,0 +1,106 @@
+:root {
+  --primary-color: #2b4552;
+  --secondary-color: rgb(51, 77, 100);
+  --text-color: white;
+}
+
+.app-container {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 2;
+}
+
+.navbar-brand a {
+  color: black;
+}
+
+.navbar-nav a {
+  color: black;
+}
+
+.movie-card {
+  display: flex;
+  flex-flow: column nowrap;
+  width: 200px;
+  border: 1px solid var(--text-color);
+  background-color: var(--secondary-color);
+  border-radius: 10px;
+} 
+.movie-card img {
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+}
+
+.jumbotron {
+  height: 80vh;
+  position: relative;
+  overflow: hidden;
+  border-bottom: 4px solid black;
+} 
+
+.jumbotron img {
+  position: absolute;
+  top: -250px;
+  z-index: 0;
+}
+
+.title-jumbotron{
+  position: absolute;
+  top: 300px;
+  z-index: 1;
+  color: black;
+} .title-jumbotron h2 {
+  font-size: 75px;
+  padding: 35px;
+}
+
+
+.container-movie-cards {
+  padding: 10px;
+  color: var(--text-color);
+  display: flex;
+  justify-content: center;
+  flex-flow: row wrap;
+  gap: 25px;
+} & h3 {
+  color: var(--text-color);
+}
+
+.card-info {
+  text-align: center;
+  padding: 10px;
+}
+
+.login-container {
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--text-color);
+}
+
+.container-fluid {
+  background-color: var(--primary-color);
+  color: var(--text-color);
+}
+
+.text-muted {
+  color: var(--text-color) !important;
+}
+
+.form-label {
+  color: var(--text-color) !important;
+}
+
+
+#error-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
